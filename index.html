@@ -1,117 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Relay Control Panel</title>
+<title>Page Title</title>
 <meta charset='utf-8'>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="default.css">
 </head>
 
-<body onload="relayLoad()">
-	<h1>Relay Control Panel</h1>
-	<table>
-		<tr>
-			<td>Relay 1</td>
-			<td>
-				<div class="onoffswitch">
-					<input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox" id="myonoffswitch1" tabindex="0">
-				<label class="onoffswitch-label" for="myonoffswitch1">
-				<span class="onoffswitch-inner"></span>
-				<span class="onoffswitch-switch"></span>
-				</label>
-			<td>
-				<input type="button" class="pulse" value="Pulse" onclick="relayPulse(1)"> </td>
-		</tr>
-		<tr>
-			<td>Relay 2</td>
-			<td>
-				<div class="onoffswitch">
-					<input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="myonoffswitch2" tabindex="1">
-				<label class="onoffswitch-label" for="myonoffswitch2">
-				<span class="onoffswitch-inner"></span>
-				<span class="onoffswitch-switch"></span>
-			<td>
-				<input type="button" class="pulse" value="Pulse" onclick="relayPulse(2)"> </td>
-		</tr>
-		<tr>
-			<td>Relay 3</td>
-			<td>
-				<div class="onoffswitch">
-					<input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox" id="myonoffswitch3" tabindex="2">
-				<label class="onoffswitch-label" for="myonoffswitch3">
-				<span class="onoffswitch-inner"></span>
-				<span class="onoffswitch-switch"></span>
-			<td>
-				<input type="button" class="pulse" value="Pulse" onclick="relayPulse(3)"> </td>
-		</tr>
-		<tr>
-			<td>Relay 4</td>
-			<td>
-				<div class="onoffswitch">
-					<input type="checkbox" name="onoffswitch4" class="onoffswitch-checkbox" id="myonoffswitch4" tabindex="3">
-				<label class="onoffswitch-label" for="myonoffswitch4">
-				<span class="onoffswitch-inner"></span>
-				<span class="onoffswitch-switch"></span>
-			<td>
-				<input type="button" class="pulse" value="Pulse" onclick="relayPulse(4)"> </td>
-		</tr>
-		<tr>
-			<td>All</td>
-			<td><input id="resetswitch" type="button" class="standard" value="Reset" onclick="location.reload()"></td>
-		</tr>
-		<tr>
-			<td><input id="helpbutton" type="button" class="standard" value="Help" onclick="relayHelp()"></td>
-		</tr>
-	</table>
-	
-	<script>
-	function relayLoad() {
-		fetch("http://192.168.1.171/msg?relay=1&action=off");
-		fetch("http://192.168.1.171/msg?relay=2&action=off");
-		fetch("http://192.168.1.171/msg?relay=3&action=off");
-		fetch("http://192.168.1.171/msg?relay=4&action=off");
-	}
-
-	function relayPulse(r) {
-		fetch("http://192.168.1.171/msg?relay=" + r + "&action=pulse");
-	}
-	var input = document.getElementById('myonoffswitch1');
-	input.addEventListener('change', function() {
-		if(this.checked) {
-			fetch("http://192.168.1.171/msg?relay=1&action=on");
-		} else {
-			fetch("http://192.168.1.171/msg?relay=1&action=off");
-		}
-	});
-	var input = document.getElementById('myonoffswitch2');
-	input.addEventListener('change', function() {
-		if(this.checked) {
-			fetch("http://192.168.1.171/msg?relay=2&action=on");
-		} else {
-			fetch("http://192.168.1.171/msg?relay=2&action=off");
-		}
-	});
-	var input = document.getElementById('myonoffswitch3');
-	input.addEventListener('change', function() {
-		if(this.checked) {
-			fetch("http://192.168.1.171/msg?relay=3&action=on");
-		} else {
-			fetch("http://192.168.1.171/msg?relay=3&action=off");
-		}
-	});
-	var input = document.getElementById('myonoffswitch4');
-	input.addEventListener('change', function() {
-		if(this.checked) {
-			fetch("http://192.168.1.171/msg?relay=4&action=on");
-		} else {
-			fetch("http://192.168.1.171/msg?relay=4&action=off");
-		}
-	});
-	function relayHelp() {
-		window.open("help.html", "_blank", 
-		"scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=520,height=520,left=1000,top=100");
-}
-	</script>
-
+<body>
+	<p>Hello, World!</p>
 </body>
 
 </html>
